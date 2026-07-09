@@ -3,11 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jubina | Portfolio</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, var(--bg), #1e293b);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0 40px;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .hero-card, .info-card {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h1, h2, h3 { margin-top: 0; }
+        .accent { color: var(--accent); }
+        .muted { color: var(--muted); }
+
+        .btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #082f49;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .skills span {
+            background: rgba(56, 189, 248, 0.15);
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        section {
+            margin-top: 24px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .grid div {
+            background: rgba(17, 24, 39, 0.85);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .hero, .grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>this is a test</h2>
-    <h3>Jubina ley github sikyo</h3>
-    <h4>i Have optimized this</h4>
+    <div class="container">
+        <header>
+            <div class="brand">Jubina</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-card">
+                <p class="accent">Hello, I’m</p>
+                <h1>Jubina Ley <span class="accent">| Web Developer</span></h1>
+                <p class="muted">I build clean, modern, and responsive websites that turn ideas into engaging digital experiences.</p>
+                <a class="btn" href="#contact">Let’s Work Together</a>
+            </div>
+            <div class="info-card">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="muted">I’m a passionate developer who enjoys crafting simple, elegant, and user-friendly interfaces. My focus is on creating thoughtful experiences that look great on any device.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                <div>
+                    <h3>Inventory Dashboard</h3>
+                    <p class="muted">A streamlined dashboard for tracking products, stock, and orders efficiently.</p>
+                </div>
+                <div>
+                    <h3>Portfolio Website</h3>
+                    <p class="muted">A stylish personal website designed to highlight work, skills, and contact information.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p class="muted">Email: hello@jubina.dev</p>
+        </section>
+    </div>
 </body>
 </html>
